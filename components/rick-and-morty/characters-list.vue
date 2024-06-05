@@ -84,7 +84,7 @@ const hasNoResults = computed(() => {
     </div>
   </div>
   <loading v-if="isLoading" />
-  <error v-else-if="error" :message="error.message" />
+  <alert v-else-if="error" :message="error.message" />
 </template>
 
 <style scoped>

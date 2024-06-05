@@ -41,6 +41,6 @@ const { data, isLoading, error } = useRickAndMortyCharacter(characterId)
       </div>
     </div>
     <loading v-if="isLoading" />
-    <error v-else-if="error" :message="error.message" />
+    <alert v-else-if="error" :message="error.message" />
   </div>
 </template>
