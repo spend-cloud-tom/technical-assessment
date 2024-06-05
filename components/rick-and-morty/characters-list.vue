@@ -43,12 +43,6 @@ const hasNoResults = computed(() => {
 </script>
 
 <template>
-  <div v-if="isLoading" class="text-gray-500 text-center mt-4">
-    <p>Loading...</p>
-  </div>
-  <div v-if="error" class="text-gray-500 text-center mt-4">
-    <p>{{ error.message }}</p>
-  </div>
   <div v-if="data">
     <div class="flex justify-between p-4">
       <input
@@ -89,6 +83,8 @@ const hasNoResults = computed(() => {
       </button>
     </div>
   </div>
+  <loading v-if="isLoading" />
+  <error v-if="error" :message="error.message" />
 </template>
 
 <style scoped>
