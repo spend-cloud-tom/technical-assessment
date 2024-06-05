@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { onMounted, ref } from 'vue'
-import axios from 'axios'
 
 const route = useRoute()
 const characterId = route.params.id
