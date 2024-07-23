@@ -10,10 +10,11 @@ export default function useRickAndMortyList() {
     queryKey: ['rickAndMortyCharacters'],
     queryFn: ({ pageParam = 1 }) => {
       const url = addQueryParams('/character', { page: pageParam })
-      return $rickAndMorty<CharacterResponse>(url)
+      return $rickAndMorty<RickAndMortyCharacterResponse>(url)
     },
     getNextPageParam: (lastPage) => {
-      return lastPage.info.next ? lastPage.info.pages + 1 : undefined
+      const nextPage = lastPage.info.next ? getNumericQueryParam(lastPage.info.next, 'page') : null
+      return nextPage ?? undefined
     },
     initialPageParam: 1,
   })

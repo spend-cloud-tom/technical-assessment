@@ -2,16 +2,8 @@
 const props = defineProps<{
   id: number
 }>()
+const { data } = useRickAndMortyData<RickAndMortyCharacter>(`character/${props.id}`)
 
-interface CharacterT {
-  name: string
-  image: string
-  gender: string
-  species: string
-  type: string
-}
-
-const { data } = useRickAndMortyData<CharacterT>(`character/${props.id}`)
 const stats = computed(() => ({
   ...(data.value?.gender && { gender: data.value.gender }),
   ...(data.value?.species && { species: data.value.species }),
