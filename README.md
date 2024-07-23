@@ -10,7 +10,7 @@ Please don't spend more than 4 hours on this assessment. We are not looking for 
 
 ## Task
 
-Connect to an additional API: the Rick and Morty API. Display a list of characters from the Rick and Morty universe. The list should be displayed in a new page, `/rick-and-morty`. Each character should be displayed with their name, species, and an image. When clicking on a character, the user should be taken to a new page, `/rick-and-morty/:id`, where they can see more details about the character.
+Connect to an additional API: the [Rick and Morty API](https://rickandmortyapi.com/). Display a list of characters from the Rick and Morty universe. The list should be displayed in a new page, `/rick-and-morty`. Each character should be displayed with their name, species, and an image. When clicking on a character, the user should be taken to a new page, `/rick-and-morty/:id`, where they can see more details about the character.
 
 ## Character list feature specs
 
