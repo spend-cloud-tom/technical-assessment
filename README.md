@@ -15,7 +15,7 @@ Connect to an additional API: the [Rick and Morty API](https://rickandmortyapi.c
 ## Character list feature specs
 
 - Display a list of characters
-- Allow users to toggle betweeen a grid and list view
+- Allow users to toggle between a grid and list view
 
 ## Bonus points
 

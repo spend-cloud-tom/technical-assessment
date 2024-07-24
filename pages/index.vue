@@ -1,7 +1,11 @@
+<script setup>
+setPageTitle('Home')
+</script>
+
 <template>
   <div>
     <nuxt-link to="/pokemon" class="flex">
-      Check out all the pokemon!
+      Check out all the Pokemon!
     </nuxt-link>
     <nuxt-link to="/rick-and-morty">
       <div class="mt-4">

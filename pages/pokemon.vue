@@ -1,21 +1,27 @@
 <script setup lang="ts">
+onMounted(() => {
+  setPageTitle('Pokemon')
+})
+
 const { data, fetchNextPage, hasNextPage } = usePokemonList()
+
+const formattedData = computed(() => {
+  return {
+    pages: data.value?.pages.map(page => ({
+      results: page.results.map(item => ({
+        name: item.name,
+        id: Number.parseInt(item.url.split('/').slice(-2)[0]),
+      })),
+    })) || [],
+  }
+})
 </script>
 
 <template>
   <article>
-    <header
-      class="flex align-center justify-center border-b-4 border-slate-500 p-8 bg-slate-950 items-center"
-    >
-      <h1 class="text-xl">
-        Pokemon
-      </h1>
-      <nuxt-link to="/" class="ml-auto">
-        Go back to the home page
-      </nuxt-link>
-    </header>
+    <page-header />
     <main>
-      <character-list-view :data="data" :has-next-page="hasNextPage" @fetch-next-page="fetchNextPage">
+      <character-list-view :data="formattedData" :has-next-page="hasNextPage" @fetch-next-page="fetchNextPage">
         <template #item="{ item }">
           <pokemon-info :name="item.name" />
         </template>
