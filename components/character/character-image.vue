@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <NuxtImg class="image" :src="props.imageSrc" :placeholder="[50, 25, 75, 5]" />
+  <NuxtImg role="img" class="image" :src="props.imageSrc" :placeholder="[50, 25, 75, 5]" />
 </template>
 
 <style scoped>

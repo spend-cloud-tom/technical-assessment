@@ -17,7 +17,7 @@ const store = useListToggleStore()
         : 'flex-col border-4 border-pink-600 rounded-lg',
     ]"
   >
-    <character-image
+    <CharacterImage
       v-if="props.imageSrc"
       :image-src="props.imageSrc"
       :class="[

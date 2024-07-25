@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     'nuxt-api-party',
     '@nuxt/image',
     'nuxt-icon',
+    '@nuxt/test-utils/module',
   ],
 
   pinia: {

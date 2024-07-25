@@ -1,9 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/vue-query'
-
-// There are currently 3 rick and morty resources available:
-// "characters": "https://rickandmortyapi.com/api/character",
-// "locations": "https://rickandmortyapi.com/api/location",
-// "episodes": "https://rickandmortyapi.com/api/episode"
+import type { RickAndMortyCharacterResponse } from '~/types/rick-and-morty'
 
 export default function useRickAndMortyList() {
   return useInfiniteQuery({
