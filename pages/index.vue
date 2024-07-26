@@ -3,7 +3,7 @@ setPageTitle('Home')
 </script>
 
 <template>
-  <div>
+  <div class="p-2">
     <nuxt-link to="/pokemon" class="flex">
       Check out all the Pokemon!
     </nuxt-link>

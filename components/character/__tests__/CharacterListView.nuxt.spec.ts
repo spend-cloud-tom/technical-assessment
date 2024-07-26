@@ -5,8 +5,8 @@ import { renderSuspended } from '@nuxt/test-utils/runtime'
 
 import { beforeEach, describe, expect, it } from 'vitest'
 import { h } from 'vue'
-import { useListToggleStore } from '../../stores/list-toggle'
-import CharacterListView from './character-list-view.vue'
+import { useListToggleStore } from '../../../stores/list-toggle'
+import CharacterListView from '../character-list-view.vue'
 
 describe('loadMoreList', () => {
   beforeEach(() => {

@@ -2,17 +2,18 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { render, screen } from '@testing-library/vue'
 import { beforeEach, describe, expect, it } from 'vitest'
-import CharacterInfo from './character-list-item.vue'
+import CharacterInfo from '../character-list-item.vue'
 
 describe('characterInfo', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
   })
-  it('renders character name and image', async () => {
+  it('renders character info and image', async () => {
     const props = {
       name: 'Test Character',
       imageSrc: 'test-image.jpg',
       stats: { Health: 100, Mana: 50 },
+      id: 1,
     }
 
     render(CharacterInfo, {

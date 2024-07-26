@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const route = useRoute() as { params: { id: string } }
 const { data } = usePokemonData<Pokemon>(`pokemon/${route.params.id}`)
+
 const stats = computed(() => ({
   ...(data.value?.height && { height: data.value.height }),
   ...(data.value?.species && { weight: data.value.weight }),
