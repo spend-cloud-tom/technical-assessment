@@ -6,6 +6,8 @@ const listToggleStore = useListToggleStore()
 function toggleView() {
   listToggleStore.setIsListView(!listToggleStore.isListView)
 }
+
+const route = useRoute() as { params: { id: string } } // TODO: Find a way not to cast this
 </script>
 
 <template>
@@ -16,7 +18,7 @@ function toggleView() {
       <Icon name="mdi:arrow-left-bold-circle" class="text-xl mr-2" />
       Go Home
     </nuxt-link>
-    <div>
+    <div v-if="!route.params.id">
       <input id="toggleList" :checked="listToggleStore.isListView" type="checkbox" class="hidden" @change="toggleView">
       <label for="toggleList" class="p-2 rounded-md border-gray-100 border-2 cursor-pointer">
         Toggle {{ listToggleStore.isListView ? "grid" : "list" }} view

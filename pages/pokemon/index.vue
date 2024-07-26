@@ -23,7 +23,7 @@ const formattedData = computed(() => {
     <main>
       <character-list-view :data="formattedData" :has-next-page="hasNextPage" @fetch-next-page="fetchNextPage">
         <template #item="{ item }">
-          <pokemon-info :name="item.name" />
+          <pokemon-info :id="item.id" :name="item.name" />
         </template>
       </character-list-view>
     </main>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { RickAndMortyCharacter } from '~/types/rick-and-morty'
+
 const props = defineProps<{
   id: number
 }>()
@@ -12,8 +14,9 @@ const stats = computed(() => ({
 </script>
 
 <template>
-  <character-info
+  <character-list-item
     v-if="data"
+    :id="id"
     :name="data.name"
     :image-src="data.image"
     :stats="stats"

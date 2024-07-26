@@ -22,7 +22,7 @@ const formattedData = computed(() => {
     <main>
       <character-list-view :data="formattedData" :has-next-page="hasNextPage" key-prop="name" @fetch-next-page="fetchNextPage">
         <template #item="{ item }">
-          <rick-and-morty-info :id="item.id" />
+          <rick-and-morty-list-item :id="item.id" />
         </template>
       </character-list-view>
     </main>

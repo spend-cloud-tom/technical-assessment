@@ -1,16 +1,10 @@
 <script setup lang="ts">
 const props = defineProps<{
   name: string
+  id: number
 }>()
 
 const { data } = usePokemonData<Pokemon>(`pokemon/${props.name}`)
-
-// const { addPokemon } = usePokeballStore()
-
-// function onClick() {
-//   if (data.value)
-//     addPokemon(data.value!)
-// }
 
 const stats = computed(() => ({
   ...(data.value?.height && { height: data.value.height }),
@@ -19,8 +13,9 @@ const stats = computed(() => ({
 </script>
 
 <template>
-  <character-info
+  <CharacterListItem
     v-if="data"
+    :id="id"
     :name="data.name"
     :image-src="data.sprites.front_default"
     :stats="stats"

@@ -2,7 +2,7 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { render, screen } from '@testing-library/vue'
 import { beforeEach, describe, expect, it } from 'vitest'
-import CharacterInfo from './character-info.vue'
+import CharacterInfo from './character-list-item.vue'
 
 describe('characterInfo', () => {
   beforeEach(() => {
