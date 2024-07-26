@@ -6,6 +6,7 @@ export default nuxt(
   antfu(
     {
       formatters: true,
+      plugins: [{ vitest: true }],
     },
   ),
 )
