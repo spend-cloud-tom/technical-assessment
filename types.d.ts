@@ -243,6 +243,13 @@ interface Type {
   type: Ability
 }
 
+interface RickAndMortyCharacter {
+  id: number
+  name: string
+  image: string
+  species: string
+}
+
 interface Pokemon {
   abilities: {
     ability: Ability
