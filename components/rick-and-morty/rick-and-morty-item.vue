@@ -1,30 +1,20 @@
 <script setup lang="ts">
-import { Layout } from '~/components/rick-and-morty/types'
+import type { RickAndMortyCharacter } from '~/types'
+import { OverviewLayout } from '~/types'
 
 const props = defineProps<{
   id: number
-  layout: Layout
+  overviewLayout: OverviewLayout
 }>()
 
 const { data } = useRickAndMortyData<RickAndMortyCharacter>(`character/${props.id}`)
+const layoutClasses = computed(() => props.overviewLayout === OverviewLayout.Grid ? 'border-4 flex flex-col rounded-lg' : 'border-4 flex rounded-lg gap-1')
 </script>
 
 <template>
   <template v-if="data">
-    <article v-if="props.layout === Layout.Grid" class="border-4 flex flex-col rounded-lg">
+    <article :class="layoutClasses">
       <NuxtImg class="image" :src="data.image" />
-      <header class="p-2  flex items-center">
-        <h2 class="font-bold text-lg capitalize text-blue-300">
-          {{ data.name }}
-        </h2>
-      </header>
-      <div class="p-2">
-        <p>Species: {{ data.species }}</p>
-      </div>
-      <footer class="flex p-2" />
-    </article>
-    <article v-else class="border-4 flex rounded-lg gap-1">
-      <NuxtImg class="image max-w-20" :src="data.image" />
       <div>
         <header class="p-2  flex items-center">
           <h2 class="font-bold text-lg capitalize text-blue-300">
