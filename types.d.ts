@@ -243,6 +243,29 @@ interface Type {
   type: Ability
 }
 
+export enum OverviewLayout {
+  Grid = 'grid',
+  List = 'list',
+}
+
+export interface OverviewItem {
+  id: number
+  name: string
+  link: string
+  image: string
+  metaList: [{
+    name: string
+    value: string
+  }]
+}
+
+interface RickAndMortyCharacter {
+  id: number
+  name: string
+  image: string
+  species: string
+}
+
 interface Pokemon {
   abilities: {
     ability: Ability
